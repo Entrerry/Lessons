@@ -7,22 +7,20 @@ b = gets.to_f
 print 'Enter c: '
 c = gets.to_f
 
-# (a * (x ** 2)) + (b * x) + c = 0
+# (a * (x**2)) + (b * x) + c = 0
 
-d = b ** 2 - 4 * a * c
+d = b**2 - 4 * a * c
 puts "Discriminant = #{d}"
 
-if
-    d < 0
-    puts 'There is no square root.'
+if d < 0
+  puts 'There is no square root.'
 else
-    x1 = (-b + Math.sqrt(d)) / (2 * a)
-    x2 = (-b - Math.sqrt(d)) / (2 * a)
+  x1 = (-b + Math.sqrt(d)) / (2 * a)
+  x2 = (-b - Math.sqrt(d)) / (2 * a)
 end
 
-if 
-    d == 0
-    puts "x1 = x2, and it is #{x1.to_f}" 
+if d == 0
+  puts "x1 = x2, and it is #{x1.to_f}" 
 elsif
-    puts "x1 = #{x1.to_f}, x2 = #{x2.to_f}"
+  puts "x1 = #{x1.to_f}, x2 = #{x2.to_f}"
 end
