@@ -10,8 +10,7 @@ if a <= 0 || b <= 0 || c <= 0
   exit
 end
 
-###
-
+=begin
 if a > b && a > c
   max = a
 elsif b > a && b > c
@@ -19,8 +18,16 @@ elsif b > a && b > c
 elsif c > a && c > b
   max = c
 end
+=end
 
-###
+max = 
+  if a > b && a > c
+    a
+  elsif b > a && b > c
+    b
+  elsif c > a && c > b
+    c
+  end
 
 if (a == b || b == c || c == a) && (a != b || b != c || c != a)
   puts "Isosceles triangle."
