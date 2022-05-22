@@ -33,4 +33,3 @@ end
 
 puts "====="
 puts "Total paid: #{result}"
-
