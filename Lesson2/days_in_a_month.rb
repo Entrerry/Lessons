@@ -13,7 +13,7 @@ month = {
   "december" => 31
 }
 
-month.each do | m, d |
+month.each do |m, d|
   if d == 30
     puts "#{m.capitalize}"
   end

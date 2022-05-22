@@ -1,11 +1,13 @@
-hh = Hash.new
+hh = {}
 
 loop do
   print "Enter name of product: "
   name = gets.chomp
-  break if name == "stop"
+    break if name == "stop"
+
   print "Enter unit price: "
   price = gets.chomp.to_i
+
   print "Enter amount of products: "
   amount = gets.chomp.to_f
 
@@ -15,7 +17,7 @@ loop do
   hh[name] = hh_x
 =end
 
-hh[name] = { price: price, amount: amount }
+  hh[name] = { price: price, amount: amount }
 end
 
 puts "-----"
@@ -24,7 +26,7 @@ puts "-----"
 
 result = 0
 
-hh.each do | name, pram |
+hh.each do |name, pram|
   sum = pram[:price] * pram[:amount]
   result += sum
 

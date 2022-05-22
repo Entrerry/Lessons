@@ -1,8 +1,8 @@
-letter = ['A', 'E', 'I', 'U', 'Y']
-hash = Hash.new
+letters = ['A', 'E', 'I', 'U', 'Y']
+hash = {}
 
-letter.each do |l|
-  hash[l] = l.ord - 64
+letters.each do |letter|
+  hash[letter] = letter.ord - 64
 end
 
 puts hash

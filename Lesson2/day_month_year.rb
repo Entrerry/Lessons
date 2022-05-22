@@ -30,9 +30,9 @@ end
 dim[2] = 29 if year % 400 == 0 || year % 4 == 0 && year % 100 != 0
 
 day_number = 0
-dim.each do | month_number, d |
+dim.each do |month_number, month_day|
   day_number += day if month_number == month
-  day_number += d if month_number < month
+  day_number += month_day if month_number < month
 end
 
 puts day_number
