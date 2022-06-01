@@ -17,6 +17,10 @@ class Station
 =end
 
   def trains_by_type(type)
+    @trains.select { |train| train.type == type } 
+  end
+
+  def trains_count(type)
     @trains.count { |train| train.type == type }
   end
 
@@ -58,6 +62,7 @@ class Train
     @railway_carriage_count = railway_carriage_count
     @number = number
     @type = type
+    @current_station = @route[0]
     #puts "We have train num. #{number}. Type is #{type}. And the train has #{railway_carriage_count} railway carriages."
   end
 
@@ -95,6 +100,16 @@ class Train
 
   def previous_station
     @route.stations[@index_station - 1]
+  end
+
+  def move_forvard
+    @index_station += 1
+    @current_station = @route[@index_station]
+  end
+
+  def move_back
+    @index_station -= 1
+    @current_station = @route[@index_station]
   end
 
   def show_location
