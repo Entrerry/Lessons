@@ -62,7 +62,7 @@ class Train
     @railway_carriage_count = railway_carriage_count
     @number = number
     @type = type
-    @current_station = @route[0]
+    #@current_station = @stations[0]
     #puts "We have train num. #{number}. Type is #{type}. And the train has #{railway_carriage_count} railway carriages."
   end
 
@@ -117,7 +117,9 @@ class Train
   end
 end
 
+=begin
 station = Station.new('Depot')
+station1 = Station.new('Moscow')
 
 route = Route.new('Depot', 'Moscow')
 puts route.stations
@@ -132,5 +134,6 @@ train2 = Train.new(667, 'freight train', 20)
 #train2.show_location
 train2.show_speed
 puts ' '
+=end
 
 
