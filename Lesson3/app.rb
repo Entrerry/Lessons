@@ -104,12 +104,12 @@ class Train
 
   def move_forvard
     @index_station += 1
-    @current_station = @route[@index_station]
+    @current_station = @stations[@index_station] until @index_station[-1]
   end
 
   def move_back
     @index_station -= 1
-    @current_station = @route[@index_station]
+    @current_station = @stations[@index_station] until @index_station[0]
   end
 
   def show_location
