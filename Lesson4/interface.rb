@@ -1,5 +1,4 @@
 class Interface
-
   def initialize
     @all_stations = []
     @all_trains = []

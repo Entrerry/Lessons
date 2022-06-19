@@ -6,7 +6,7 @@ require_relative 'route'
 require_relative 'railway_carriage'
 require_relative 'railway_carriage_passenger'
 require_relative 'railway_carriage_cargo'
-require_relative 'ui'
+require_relative 'interface'
 
 interface = Interface.new
 
