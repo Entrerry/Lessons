@@ -7,7 +7,11 @@ class Train
   attr_reader :number, :type, :route_for_this_train
   attr_accessor :route_index, :railway_carriages
 
-  @@all_trains = []
+  @@all = []
+
+  def self.all # метод класса (возвращает все поезда)
+    @@all
+  end
 
   def self.find(number) # принимает номер поезда и возвращает объект поезда по номеру
     @@all_trains.detect { |train| train.number == number }
@@ -18,7 +22,7 @@ class Train
     @number = number
     @type = nil
     @railway_carriages = []
-    @@all_trains << self
+    #@@all_trains << self
     register_instance
   end
 

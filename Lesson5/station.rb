@@ -5,16 +5,16 @@ class Station
   extend InstanceCounter
   attr_reader :title
 
-  @@all_stations = []
+  @@all = []
 
   def self.all # метод класса (возвращает все станции)
-    @@all_stations
+    @@all
   end
   
   def initialize(title) # Имеет название, которое указывается при ее создании
     @title = title
     @trains = []
-    @@all_stations << self
+    #@@all_stations << self
     register_instance
   end
 
