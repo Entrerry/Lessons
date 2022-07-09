@@ -23,8 +23,15 @@ class Train
     @number = number
     @type = nil
     @railway_carriages = []
+    begin
+      validate!
+      rescue
+      puts 'Number format is not valid!'
+      return
+    end
+    @@all << self
     register_instance
-    validate!
+    puts "Train number #{number} has been created!"
   end
 
   def valid?
@@ -93,8 +100,6 @@ class Train
 
 protected
   def validate!
-    raise "Title can't be empty!" if number == ""
-    raise "Title format is not valid!" if number !~ NUMBER_FORMAT
-    true
+    raise "Number format is not valid!" if number !~ NUMBER_FORMAT
   end
 end

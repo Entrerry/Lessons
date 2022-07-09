@@ -38,8 +38,8 @@ class Interface
   def create_station
     print 'Enter station name: '
     name = gets.chomp
-    puts "Station #{name} has been created!"
-    Station.all << Station.new(name)
+    Station.new(name)
+    #puts "Station #{name} has been created!"
   end
 
   def create_train
@@ -47,9 +47,9 @@ class Interface
     number = gets.chomp
     print 'Enter train type (passenger/cargo):'
     type = gets.chomp
-    puts "#{type.capitalize} train, number #{number} has been created!"
-    Train.all << CargoTrain.new(number) if type == 'cargo'
-    Train.all << PassengerTrain.new(number) if type == 'passenger'
+    PassengerTrain.new(number) if type == 'passenger'
+    CargoTrain.new(number) if type == 'cargo'
+    #puts "#{type.capitalize} train, number #{number} has been created!"
   end
 
   def create_route

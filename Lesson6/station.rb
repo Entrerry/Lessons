@@ -14,9 +14,16 @@ class Station
   
   def initialize(title) # Имеет название, которое указывается при ее создании
     @title = title
+    begin
+    validate!
+    rescue
+      puts 'Title format is not valid!'
+      return
+    end
+    @@all << self
     @trains = []
     register_instance
-    validate!
+    puts "Station #{title.capitalize} has been created!"
   end
 
   def valid?
@@ -51,8 +58,6 @@ class Station
   protected
 
   def validate!
-    raise "Title can't be empty!" if title == ""
     raise "Title format is not valid!" if title !~ TITLE_FORMAT
-    true
   end
 end
