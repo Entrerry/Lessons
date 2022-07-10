@@ -23,15 +23,9 @@ class Train
     @number = number
     @type = nil
     @railway_carriages = []
-    begin
-      validate!
-      rescue
-      puts 'Number format is not valid!'
-      return
-    end
+    validate!
     @@all << self
     register_instance
-    puts "Train number #{number} has been created!"
   end
 
   def valid?

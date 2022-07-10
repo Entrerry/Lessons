@@ -14,16 +14,10 @@ class Station
   
   def initialize(title) # Имеет название, которое указывается при ее создании
     @title = title
-    begin
     validate!
-    rescue
-      puts 'Title format is not valid!'
-      return
-    end
     @@all << self
     @trains = []
     register_instance
-    puts "Station #{title.capitalize} has been created!"
   end
 
   def valid?

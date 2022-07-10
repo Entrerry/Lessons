@@ -38,8 +38,13 @@ class Interface
   def create_station
     print 'Enter station name: '
     name = gets.chomp
-    Station.new(name)
-    #puts "Station #{name} has been created!"
+    begin
+      Station.new(name)
+      rescue
+      puts 'Title format is not valid!'
+      return
+    end
+    puts "Station #{name.capitalize} has been created!"
   end
 
   def create_train
@@ -47,9 +52,14 @@ class Interface
     number = gets.chomp
     print 'Enter train type (passenger/cargo):'
     type = gets.chomp
-    PassengerTrain.new(number) if type == 'passenger'
-    CargoTrain.new(number) if type == 'cargo'
-    #puts "#{type.capitalize} train, number #{number} has been created!"
+    begin
+      PassengerTrain.new(number) if type == 'passenger'
+      CargoTrain.new(number) if type == 'cargo'
+      rescue
+      puts 'Number format is not valid!'
+      return
+    end
+    puts "#{type.capitalize} train, number #{number} has been created!"
   end
 
   def create_route
