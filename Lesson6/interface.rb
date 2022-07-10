@@ -40,8 +40,9 @@ class Interface
     print 'Enter station name: '
     name = gets.chomp
       Station.new(name)
-      rescue
-      puts 'Title format is not valid! Try another name.'
+      rescue => e
+      puts e
+      #puts 'Title format is not valid! Try another name.'
       retry
     end
     puts "Station #{name.capitalize} has been created!"
@@ -55,8 +56,9 @@ class Interface
       type = gets.chomp
       PassengerTrain.new(number) if type == 'passenger'
       CargoTrain.new(number) if type == 'cargo'
-      rescue
-      puts 'Number format is not valid! Try another number (***-**).'
+      rescue => e
+      puts e
+      #puts 'Number format is not valid! Try another number (***-**).'
       return
     end
     puts "#{type.capitalize} train, number #{number} has been created!"
