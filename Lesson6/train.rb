@@ -15,7 +15,7 @@ class Train
   end
 
   def self.find(number) # принимает номер поезда и возвращает объект поезда по номеру
-    @@all_trains.detect { |train| train.number == number }
+    @@all.detect { |train| train.number == number }
   end
  
   def initialize(number) # Имеет номер, тип (указывается при создани)
