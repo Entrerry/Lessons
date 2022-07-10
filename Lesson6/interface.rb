@@ -36,27 +36,27 @@ class Interface
   private
 
   def create_station
+    begin
     print 'Enter station name: '
     name = gets.chomp
-    begin
       Station.new(name)
       rescue
-      puts 'Title format is not valid!'
-      return
+      puts 'Title format is not valid! Try another name.'
+      retry
     end
     puts "Station #{name.capitalize} has been created!"
   end
 
   def create_train
-    print 'Enter train number: '
-    number = gets.chomp
-    print 'Enter train type (passenger/cargo):'
-    type = gets.chomp
     begin
+      print 'Enter train number: '
+      number = gets.chomp
+      print 'Enter train type (passenger/cargo):'
+      type = gets.chomp
       PassengerTrain.new(number) if type == 'passenger'
       CargoTrain.new(number) if type == 'cargo'
       rescue
-      puts 'Number format is not valid!'
+      puts 'Number format is not valid! Try another number (***-**).'
       return
     end
     puts "#{type.capitalize} train, number #{number} has been created!"
