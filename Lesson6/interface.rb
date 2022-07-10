@@ -59,7 +59,7 @@ class Interface
       rescue => e
       puts e
       #puts 'Number format is not valid! Try another number (***-**).'
-      return
+      retry
     end
     puts "#{type.capitalize} train, number #{number} has been created!"
   end
